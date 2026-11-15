@@ -10,7 +10,7 @@ fi
 printf 'Filesystem usage (warning threshold: %s%%)\n' "$THRESHOLD"
 warning=0
 while IFS= read -r line; do
-  read -r filesystem size used available percent mountpoint <<< "$line"
+  read -r filesystem _ _ _ percent mountpoint <<< "$line"
   usage="${percent%%%}"
   printf '%-28s %4s used at %s\n' "$mountpoint" "$percent" "$filesystem"
   if (( usage >= THRESHOLD )); then
