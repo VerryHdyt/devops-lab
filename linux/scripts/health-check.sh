@@ -2,8 +2,8 @@
 # Basic Linux host health check for the DevOps Lab.
 set -Eeuo pipefail
 
-DISK_WARN="\${DISK_WARN:-80}"
-MEMORY_WARN="\${MEMORY_WARN:-90}"
+DISK_WARN="${DISK_WARN:-80}"
+MEMORY_WARN="${MEMORY_WARN:-90}"
 failed=0
 
 print_status() {
